@@ -1,90 +1,44 @@
-\# Breakout - CS50 Games
+# Fifty Bird - CS50 Games
 
+![Grade](https://img.shields.io/badge/Grade-100%25-brightgreen?style=for-the-badge)
 
+A 2D remake of the mobile hit **Flappy Bird**, developed as part of Harvard's CS50 Introduction to Game Development course. **This implementation received a perfect score of 100%** for meeting all core grading criteria, including infinite procedural obstacle generation, state management, and seamless parallax background scrolling.
 
-!\[Grade](https://img.shields.io/badge/Grade-100%25-brightgreen?style=for-the-badge)
+Official Course Reference: [CS50 Games](https://cs50.harvard.edu/games/)
 
+---
 
+## 🎮 Gameplay & Features
 
-A complete 2D implementation of the classic retro brick-breaker \*\*Breakout\*\*, developed as part of Harvard's CS50 Introduction to Game Development course. \*\*This implementation received a perfect score of 100%\*\* for meeting all core grading requirements, including procedural level layouts, power-up systems, dynamic paddle scaling, and score-based progression.
+- **Procedural Pipe Generation:** Obstacles spawn dynamically at random heights and randomized intervals to keep gameplay unpredictable.
+- **Parallax Scrolling:** Multi-layered backgrounds move at different speeds to create a depth-of-field 2D visual effect.
+- **Score Tracking & Medals:** Tracks scores in real-time, awarding different medals based on performance upon reaching the game-over state.
+- **State Machine Transitions:** Manages clean transitions across `Countdown`, `Title`, `Play`, `Score`, and `Pause` states.
+- **Audio Feedback:** Authentic retro sound effects for jumping, scoring points, and colliding with obstacles.
 
+---
 
+## 🕹️ Controls
 
-Official Course Reference: \[CS50 Games](https://cs50.harvard.edu/games/)
+Take control of the bird using your keyboard:
 
-
-
-\---
-
-
-
-\## 🎮 Gameplay \& Features
-
-
-
-\- \*\*Procedural Brick Layouts:\*\* Levels generate dynamically with randomized configurations, tier-based brick strengths, and color-coded score variations.
-
-\- \*\*Power-up Spawning:\*\* Hitting special bricks drops power-ups, including splitting the ball into three independent active balls.
-
-\- \*\*Dynamic Paddle Scaling:\*\* The paddle grows or shrinks in size depending on your current score streaks or life losses to balance difficulty.
-
-\- \*\*Particle System Effects:\*\* Vibrant visual particle bursts explode from bricks upon destruction, reflecting the color of the brick hit.
-
-\- \*\*High Score Persistence:\*\* Saves your top performances to a local file stream so your high scores persist across game restarts.
-
-
-
-\---
-
-
-
-\## 🕹️ Controls
-
-
-
-Take control of your paddle using your keyboard:
-
-
-
-| Action | Control Input |
-
+| Action | Control Key |
 | :--- | :--- |
+| **Jump / Flap** | `Spacebar` |
+| **Pause / Resume Game** | `P` |
+| **Enter / Start Match** | `Enter` |
 
-| \*\*Move Paddle Left\*\* | `Left Arrow Key` or `A` |
+---
 
-| \*\*Move Paddle Right\*\* | `Right Arrow Key` or `D` |
+## 🚀 How to Run the Game
 
-| \*\*Serve Ball / Select Option\*\* | `Spacebar` |
+This game is built using the **LÖVE2D** framework and programmed in **Lua**.
 
-| \*\*Pause / Resume Game\*\* | `P` |
-
-
-
-\---
-
-
-
-\## 🚀 How to Run the Game
-
-
-
-This game is built using the \*\*LÖVE2D\*\* framework and programmed in \*\*Lua\*\*.
-
-
-
-\### Prerequisites
-
+### Prerequisites
 Make sure you have LÖVE2D installed on your system:
+- Download it from [love2d.org](https://love2d.org/) or install it via your package manager.
 
-\- Download it from \[love2d.org](https://love2d.org/) or install it via your package manager.
-
-
-
-\### Running Locally
-
-1\. Open your terminal or command prompt and navigate to this specific folder:
-
-&#x20;  ```bash
-
-&#x20;  cd path/to/your/CS50/breakout
-
+### Running Locally
+1. Open your terminal or command prompt and navigate to this specific folder:
+   ```bash
+   cd path/to/your/CS50/FlappyBird
