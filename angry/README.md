@@ -8,7 +8,7 @@ Welcome to my implementation of **Angry Birds** for Harvard University's *CS50's
 
 This codebase received a perfect score of **100%** on grading evaluation! 🎉
 
-- To watch my demo, click the link: [https://www.youtube.com/watch?v=v7NMPtzZoLw]()
+- To watch my demo, click the link: [Demo link](https://www.youtube.com/watch?v=v7NMPtzZoLw)
 
 ## 🚀 Project Overview
 
