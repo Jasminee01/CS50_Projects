@@ -1,210 +1,99 @@
-Legend of Zelda - CS50 Games
+# Legend Of Zelda - CS50 Games
+
+![Grade](https://img.shields.io/badge/Grade-100%25-brightgreen?style=for-the-badge)
+
+A 2D remake of the mobile hit **Legend Of Zelda**, developed as part of Harvard's CS50 Introduction to Game Development course. **This implementation received a perfect score of 100%** for meeting all core grading criteria, including infinite procedural obstacle generation, state management, and seamless parallax background scrolling.
+
+Official Course Reference: [CS50 Games](https://cs50.harvard.edu/games/)
+
+---
+
+## 🎮 Gameplay & Features
+
+- **Random Healing Hearts:**  Defeated enemies have a chance to drop a heart that restores one full heart, equal to 2 health points.
+- **Health Limit:**  Healing is capped at the player's maximum health of 6 to prevent the heart display from overflowing.
+- **Interactive Pots:** Pots spawn throughout the dungeon and act as solid objects that the player cannot walk through.
+- **Pot Carrying: ** The player can lift a nearby pot, carry it above their head and move around with it.
+- **Carrying Animation:** The player's animation changes while carrying a pot, and sword attacks are disabled while their hands are occupied.
+- **Throwable Pots:** A carried pot can be thrown in the direction the player is facing.
+- **Pot Damage:** A thrown pot deals 1 point of damage when it strikes an enemy.
+- **Pot Travel Limit** Pots disappear when they hit a wall, collide with an enemy or travel farther than four tiles.
+- **Treasure Chest: **A chest is placed in one dungeon room and can be opened to unlock the Boomerang.
+- **Boomerang Inventory:** The Boomerang is unavailable at the start and is added to the player's inventory only after the chest is opened.
+- **Returning Projectile:** The Boomerang travels up to four tiles before returning to the player's current position.
+- **Wall and Enemy Detection:** The Boomerang returns early when it strikes a wall or enemy and damages enemies on contact.
+- **Rotating Boomerang:** The projectile rotates while moving through the air.
+- **Inventory Indicator:** A Boomerang icon appears after the item has been collected and changes appearance while the Boomerang is in flight.
 
 
+---
 
-A top-down dungeon adventure developed as part of Harvard's CS50 Introduction to Game Development course. This project extends the Lecture 5 distribution code with healing hearts, interactive pots, projectile combat, and an unlockable Boomerang.
+## 🕹️ Controls
 
-Official Course Reference: CS50 Games
+Take control of the bird using your keyboard:
 
-🎮 Gameplay & Features
-
-Random Healing Hearts: Defeated enemies have a chance to drop a heart that restores one full heart, equal to 2 health points.
-
-Health Limit: Healing is capped at the player's maximum health of 6 to prevent the heart display from overflowing.
-
-Interactive Pots: Pots spawn throughout the dungeon and act as solid objects that the player cannot walk through.
-
-Pot Carrying: The player can lift a nearby pot, carry it above their head and move around with it.
-
-Carrying Animation: The player's animation changes while carrying a pot, and sword attacks are disabled while their hands are occupied.
-
-Throwable Pots: A carried pot can be thrown in the direction the player is facing.
-
-Pot Damage: A thrown pot deals 1 point of damage when it strikes an enemy.
-
-Pot Travel Limit: Pots disappear when they hit a wall, collide with an enemy or travel farther than four tiles.
-
-Treasure Chest: A chest is placed in one dungeon room and can be opened to unlock the Boomerang.
-
-Boomerang Inventory: The Boomerang is unavailable at the start and is added to the player's inventory only after the chest is opened.
-
-Returning Projectile: The Boomerang travels up to four tiles before returning to the player's current position.
-
-Wall and Enemy Detection: The Boomerang returns early when it strikes a wall or enemy and damages enemies on contact.
-
-Rotating Boomerang: The projectile rotates while moving through the air.
-
-Inventory Indicator: A Boomerang icon appears after the item has been collected and changes appearance while the Boomerang is in flight.
-
-🕹️ Controls
-
-Action
-
-Control Key
-
-Move Up
-
-↑
-
-Move Down
-
-↓
-
-Move Left
-
-←
-
-Move Right
-
-→
-
-Swing Sword
-
-Spacebar
-
-Lift / Throw Pot
-
-Enter or Return
-
-Use Boomerang
-
-E
-
-View Dungeon Map
-
-M
-
-Quit Game
-
-Esc
+| Action | Control Key |
+| :--- | :--- |
+| **Move Right** | `→` |
+| **Move Left** | `←` |
+| **Move Up** | `↑` |
+| **Move Down** | `↓` |
+| **Lift / Throw Pot** | `Enter` |
+| **Swing Sword** | `Spacebar` |
+| **Use Boomerang** | `E` |
+| **Quit Game** | `ESC` |
+| **View Dungeon Map** | `M` |
 
 The sword cannot be used while the player is carrying a pot. The Boomerang can only be thrown after it has been collected and while it is not already in flight.
+---
 
-❤️ Healing Hearts
 
-Enemies do not drop a heart every time they are defeated. When a heart does appear, collecting it:
+##❤️ Healing Hearts
+- Enemies do not drop a heart every time they are defeated. When a heart does appear, collecting it:
+- Restores 2 health points, representing one full heart.
+- Never raises the player's health above the maximum value of 6.
+- Removes the heart object from the room after it is consumed.
 
-Restores 2 health points, representing one full heart.
+##🏺 Pots
 
-Never raises the player's health above the maximum value of 6.
+- Pots can be used as both dungeon obstacles and weapons:
 
-Removes the heart object from the room after it is consumed.
+- The player faces a pot and presses Enter or Return to pick it up.
 
-🏺 Pots
+- The player enters a carrying state and holds the pot above their head.
 
-Pots can be used as both dungeon obstacles and weapons:
+- The pot follows the player's position while it is being carried.
 
-The player faces a pot and presses Enter or Return to pick it up.
+- Pressing the interaction key again throws the pot in the direction the player is facing.
 
-The player enters a carrying state and holds the pot above their head.
+- The pot disappears after hitting a wall or enemy, or after travelling more than four tiles.
 
-The pot follows the player's position while it is being carried.
+##🪃 Boomerang
 
-Pressing the interaction key again throws the pot in the direction the player is facing.
+- The Boomerang introduces a simple inventory and ranged-combat system:
 
-The pot disappears after hitting a wall or enemy, or after travelling more than four tiles.
+- The player finds and opens the treasure chest placed in the dungeon.
 
-🪃 Boomerang
+- The Boomerang is added to the player's inventory and its icon appears on screen.
 
-The Boomerang introduces a simple inventory and ranged-combat system:
+- Pressing E throws it in the direction the player is facing.
 
-The player finds and opens the treasure chest placed in the dungeon.
+- It travels for up to four tiles while rotating.
+- It returns early if it hits a wall or enemy.
 
-The Boomerang is added to the player's inventory and its icon appears on screen.
+- During its return journey, it tracks the player's position even if the playe moves.
 
-Pressing E throws it in the direction the player is facing.
+- It cannot be thrown again until it has returned.
 
-It travels for up to four tiles while rotating.
+## 🚀 How to Run the Game
 
-It returns early if it hits a wall or enemy.
+This game is built using the **LÖVE2D** framework and programmed in **Lua**.
 
-During its return journey, it tracks the player's position even if the player moves.
+### Prerequisites
+Make sure you have LÖVE2D installed on your system:
+- Download it from [love2d.org](https://love2d.org/) or install it via your package manager.
 
-It cannot be thrown again until it has returned.
-
-🚀 How to Run the Game
-
-This game is built using the LÖVE2D framework and programmed in Lua.
-
-Prerequisites
-
-Install LÖVE2D from love2d.org.
-
-Running Locally
-
-Clone or download the project.
-
-Open a terminal or command prompt and navigate to the Zelda directory:
-
-cd path/to/zelda
-
-Run the game with LÖVE2D:
-
-love .
-
-On macOS, if the love command is unavailable, run:
-
-/Applications/love.app/Contents/MacOS/love .
-
-You can also drag the zelda folder onto the LÖVE application.
-
-🛠️ Technologies Used
-
-Lua
-
-LÖVE2D
-
-State-machine architecture
-
-Object-oriented game components
-
-Git and GitHub
-
-📁 Submission Structure
-
-The Zelda project files must appear directly in the required CS50 submission branch and must not be placed inside an additional folder:
-
-games50/projects/2025/x/zelda
-├── dependencies
-├── fonts
-├── graphics
-├── sounds
-├── src
-│   ├── DungeonMaker.lua
-│   └── ...
-├── README.md
-├── conf.lua
-├── main.lua
-└── ...
-
-The required branch is:
-
-games50/projects/2025/x/zelda
-
-If submit50 is installed, the project can be submitted with:
-
-submit50 games50/projects/2025/x/zelda
-
-🎥 Screencast Checklist
-
-The demonstration video should:
-
-Be no longer than 5 minutes and not be uploaded as a YouTube Short.
-
-Begin with the edX and GitHub usernames displayed on screen.
-
-Show random heart drops and the player collecting a heart.
-
-Show the player picking up and carrying a pot.
-
-Show a pot defeating an enemy and another pot disappearing after reaching its travel limit.
-
-Show the chest being opened and the Boomerang being unlocked.
-
-Show the Boomerang travelling, rotating, damaging an enemy and returning to the moving player.
-
-Include timestamps in the video description for the first demonstration of each required feature.
-
-📚 Course
-
-Developed for CS50's Introduction to Game Development by Harvard University.
+### Running Locally
+1. Open your terminal or command prompt and navigate to this specific folder:
+   ```bash
+   cd path/to/your/CS50/FlappyBird
